@@ -9,8 +9,8 @@ fn main() {
     let key = env::args().skip(1).next().unwrap();
     let dur = time::Duration::from_millis(WAIT_FOR_WINDOW_ACTIVATING_MS);
     let mut enigo = Enigo::new();
-    let ror_args = ["Zathura", "echo", "no-zathura"];
-    Command::new("rp-run-or-raise.sh")
+    let ror_args = ["run-or-raise", "Zathura", "echo", "no-zathura"];
+    Command::new("/home/guru/bin/rp-enhanced-window-switcher")
         .args(&ror_args)
         .spawn()
         .expect("Failed to execute ratpoison to switch to Zathura");
