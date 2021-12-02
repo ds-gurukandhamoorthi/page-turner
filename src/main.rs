@@ -6,7 +6,7 @@ use std::{thread, time};
 const WAIT_FOR_WINDOW_ACTIVATING_MS: u64 = 50_u64;
 
 fn main() {
-    let key = env::args().skip(1).next().unwrap();
+    let key = env::args().nth(1).unwrap();
     let dur = time::Duration::from_millis(WAIT_FOR_WINDOW_ACTIVATING_MS);
     let mut enigo = Enigo::new();
     let ror_args = ["run-or-raise", "Zathura", "echo", "no-zathura"];
